@@ -15,6 +15,7 @@
     using MoiteRecepti.Data.Models;
     using MoiteRecepti.Data.Repositories;
     using MoiteRecepti.Data.Seeding;
+    using MoiteRecepti.Services.Data;
     using MoiteRecepti.Services.Mapping;
     using MoiteRecepti.Services.Messaging;
     using MoiteRecepti.Web.ViewModels;
@@ -60,8 +61,9 @@
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
-            // Application services
+            // Application service
             services.AddTransient<IEmailSender, NullMessageSender>();
+            services.AddTransient<IGetCountService, GetCountService>();
         }
 
         private static void Configure(WebApplication app)
