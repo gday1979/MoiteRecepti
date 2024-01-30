@@ -27,8 +27,15 @@
 
         public IActionResult Index()
         {
-           var viewModel = this.countsService.GetCounts();
-           return this.View();
+           var counts = this.countsService.GetCounts();
+           var viewModel = new IndexViewModel
+            {
+                CategoriesCount = counts.CategoriesCount,
+                ImagesCount = counts.ImagesCount,
+                IngredientsCount = counts.IngredientsCount,
+                RecipesCount = counts.RecipesCount,
+            };
+           return this.View(viewModel);
         }
 
         public IActionResult Privacy()

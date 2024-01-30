@@ -6,12 +6,14 @@
     using System.Text;
     using System.Threading.Tasks;
 
+    using MoiteRecepti.Services.Data.Models;
     using MoiteRecepti.Web.ViewModels.Home;
 
     public interface IGetCountService
     {
         // 1.Use ViewModels
         // 2.Create Dto ->viewmodel
-        IndexViewModel GetCounts();
+        // 3.tuples
+        CountsDto GetCounts();
     }
 }
