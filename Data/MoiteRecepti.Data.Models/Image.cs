@@ -25,6 +25,8 @@
 
         public string Extension { get; set; }
 
+        public string RemoteImageUrl { get; set; }  
+
         // The content of the image is kept in the file system
     }
 }
